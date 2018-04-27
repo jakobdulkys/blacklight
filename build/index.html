@@ -7,19 +7,235 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="theme-color" content="#FEEACC">
     <meta name="author" content="Malte Pahl">
-    <meta name="keywords" content="Frontend-UI">
+    <meta name="keywords" content="Blacklight-UI">
     <meta name="ROBOTS" content="NOINDEX,NOFOLLOW">
     <link rel="manifest" href="/manifest.json">
     <link rel="shortcut icon" href="/favicon.ico">
     <title>blacklight UI</title>
     <link href="/static/css/main.a7320ff3.css" rel="stylesheet">
+    <link href="/static/css/slider.css" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        line-height: 1.6;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #wrapper {
+        position: relative;
+        width: 100%;
+        min-height: 55vw;
+        overflow: hidden;
+      }
+
+      .layer {
+        position: absolute;
+        width: 100vw;
+        min-height: 55vw;
+        overflow: hidden;
+      }
+
+      .layer .content-wrap {
+        position: absolute;
+        width: 100vw;
+        min-height: 55vw;
+      }
+
+      .layer .content-body {
+        width: 25%;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        transform: translateY(-50%);
+        color: #fff;
+      }
+
+      .layer img {
+        position: absolute;
+        width: 35%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .layer h1 {
+        font-size: 2em;
+      }
+
+      .bottom {
+        background: #222;
+        z-index: 1;
+        background-image: url(https://placeimg.com/645/480/any);
+        background-size: cover
+      }
+
+      .bottom .content-body {
+        right: 5%;
+      }
+
+      .bottom h1 {
+        color: #fdab00;
+      }
+
+      .top {
+        background: #eee;
+        color: #222;
+        z-index: 2;
+        width: 50vw;
+        /*transform: rotate(30deg) translateY(-50%);*/
+      }
+
+      .top .content-body {
+        left: 5%;
+        color: #222;
+      }
+
+      .handle {
+        position: absolute;
+        height: 100%;
+        display: block;
+        background-color: #343681;
+        width: 15px;
+        top: 0;
+        left: 50%;
+        z-index: 3;
+      }
+
+      .skewed .handle {
+        top: 50%;
+        transform: rotate(30deg) translateY(-50%);
+        height: 200%;
+        transform-origin: top;
+      }
+
+      .skewed .top {
+        transform: skew(-30deg);
+        margin-left: -1000px;
+        width: calc(50vw + 1000px);
+      }
+
+      .skewed .top .content-wrap {
+        background-image: url(https://placeimg.com/640/480/any);
+        background-size: cover;
+        transform: skew(30deg);
+        margin-left: 1000px;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          font-size: 75%;
+        }
+      }
+
+    </style>
 </head>
 
 <body bgcolor="#9999ee">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script type="text/javascript" src="/static/js/main.603ab379.js"></script>
+    <!-- <div id="root"></div> -->
+    <!-- <script type="text/javascript" src="/static/js/main.603ab379.js"></script> -->
+
+
+
+
+    <div>
+
+      hallo
+      asasd
+      asasd
+
+    </div>
+ <section id="wrapper" class="skewed">
+            <div class="layer bottom">
+                <div class="content-wrap">
+                    <div class="content-body">
+                        <h1>Look Sharp</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam temporibus dolore vero reiciendis atque debitis. Sequi at consequatur deserunt?</p>
+                    </div>
+                    <img src="http://www.traversymedia.com/downloads/assets/image1.png" alt="" />
+                </div>
+            </div>
+
+            <div class="layer top">
+                <div class="content-wrap">
+                    <div class="content-body">
+                        <h1>Stay Cool</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam temporibus dolore vero reiciendis atque debitis. Sequi at consequatur deserunt?</p>
+                    </div>
+                    <img src="http://www.traversymedia.com/downloads/assets/image2.png" alt="" />
+                </div>
+            </div>
+
+            <div class="handle"></div>
+        </section>
+
+    <div>
+
+      <nav>
+        <a href="/home">Home</a>
+        <a href="/leistungen">Leistung</a>
+        <a href="/material">Material</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/über-uns">Über uns</a>
+      </nav>
+
+      <section>bilder silder max. 5mal</section>
+
+      <main>
+        Haupt inhalt
+
+
+
+      </main>
+
+      <aside>
+        irgendwelche werbung / eigenes material zum werben / refernez projekt anzeigen als eine art news box
+      </aside>
+
+      <footer>
+        rechtliches / kontakt / impressum / agb / Adresse / anfahrt usw.
+      </footer>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    let wrapper = document.getElementById('wrapper');
+    let topLayer = wrapper.querySelector('.top');
+    let handle = wrapper.querySelector('.handle');
+    let skew = 0;
+    let delta = 0;
+
+    if(wrapper.className.indexOf('skewed') != -1){
+      skew = 1000;
+    }
+
+    wrapper.addEventListener('mousemove', function(e){
+      delta = (e.clientX - window.innerWidth / 2) * 0.5;
+
+      handle.style.left = e.clientX + delta + 'px';
+
+      topLayer.style.width= e.clientX + skew + delta + 'px';
+    });
+  });
+</script>
 <script>
 ! function(e, a, t, n, g, c, o) { e.GoogleAnalyticsObject = g, e.ga = e.ga || function() {
         (e.ga.q = e.ga.q || []).push(arguments) }, e.ga.l = 1 * new Date, c = a.createElement(t), o = a.getElementsByTagName(t)[0], c.async = 1, c.src = "https://www.google-analytics.com/analytics.js", o.parentNode.insertBefore(c, o) }(window, document, "script", 0, "ga"), ga("create", "UA-xxxxxxxx-2", "auto"), ga("send", "pageview")
