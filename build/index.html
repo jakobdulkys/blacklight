@@ -14,188 +14,196 @@
     <title>blacklight UI</title>
     <link href="/static/css/main.a7320ff3.css" rel="stylesheet">
     <link href="/static/css/slider.css" rel="stylesheet">
+    <link href="./static/css/handy-slider.css" rel="stylesheet">
+    <link href="./static/css/myStyles.css" rel="stylesheet">
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-size: 100%;
-        line-height: 1.6;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      #wrapper {
-        position: relative;
-        width: 100%;
-        min-height: 55vw;
-        overflow: hidden;
-      }
-
-      .layer {
-        position: absolute;
-        width: 100vw;
-        min-height: 55vw;
-        overflow: hidden;
-      }
-
-      .layer .content-wrap {
-        position: absolute;
-        width: 100vw;
-        min-height: 55vw;
-      }
-
-      .layer .content-body {
-        width: 25%;
-        position: absolute;
-        top: 50%;
-        text-align: center;
-        transform: translateY(-50%);
-        color: #fff;
-      }
-
-      .layer img {
-        position: absolute;
-        width: 35%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .layer h1 {
-        font-size: 2em;
-      }
-
-      .bottom {
-        background: #222;
-        z-index: 1;
-        background-image: url(https://placeimg.com/645/480/any);
-        background-size: cover
-      }
-
-      .bottom .content-body {
-        right: 5%;
-      }
-
-      .bottom h1 {
-        color: #fdab00;
-      }
-
-      .top {
-        background: #eee;
-        color: #222;
-        z-index: 2;
-        width: 50vw;
-        /*transform: rotate(30deg) translateY(-50%);*/
-      }
-
-      .top .content-body {
-        left: 5%;
-        color: #222;
-      }
-
-      .handle {
-        position: absolute;
-        height: 100%;
-        display: block;
-        background-color: #343681;
-        width: 15px;
-        top: 0;
-        left: 50%;
-        z-index: 3;
-      }
-
-      .skewed .handle {
-        top: 50%;
-        transform: rotate(30deg) translateY(-50%);
-        height: 200%;
-        transform-origin: top;
-      }
-
-      .skewed .top {
-        transform: skew(-30deg);
-        margin-left: -1000px;
-        width: calc(50vw + 1000px);
-      }
-
-      .skewed .top .content-wrap {
-        background-image: url(https://placeimg.com/640/480/any);
-        background-size: cover;
-        transform: skew(30deg);
-        margin-left: 1000px;
-      }
-
-      @media (max-width: 768px) {
-        body {
-          font-size: 75%;
-        }
-      }
-
-    </style>
+    
+      #handy-slider {margin-top: 50px}
+  </style>
 </head>
 
-<body bgcolor="#9999ee">
+<body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <!-- <div id="root"></div> -->
     <!-- <script type="text/javascript" src="/static/js/main.603ab379.js"></script> -->
 
+<nav>
+  <a href="./index.html">Home</a>
+  <a href="./leistungen.html">Leistungen</a>
+  <a href="#">Material</a>
+  <a href="#">Portfolio</a>
+  <a href="#">Über Uns</a>
+</nav>
 
+
+      <section id="wrapper" class="skewed">
+          <div class="layer bottom">
+              <div class="content-wrap">
+                  <div class="content-body">
+                      <h1 id="titelRechts">Look Sharp</h1>
+                      <p id="textRechts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam temporibus dolore vero reiciendis atque debitis. Sequi at consequatur deserunt?</p>
+                  </div>
+                  <img src="./static/images/Blacklight-logo.jpg" alt="" />
+              </div>
+          </div>
+
+          <div class="layer top">
+              <div class="content-wrap">
+                  <div class="content-body">
+                      <h1 id="titelLinks">Stay Cool</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam temporibus dolore vero reiciendis atque debitis. Sequi at consequatur deserunt?</p>
+                  </div>
+                  <!-- <img src="http://www.traversymedia.com/downloads/assets/image2.png" alt="" /> -->
+                  <img src="./static/images/Blacklight-logo.jpg" alt="" />
+              </div>
+          </div>
+
+          <div class="handle"></div>
+      </section>
+
+      <!-- handy slider -->
+      <section id="handy-slider">
+       
+        <div class="container">
+        
+          <input type="radio" id="i1" name="images" checked />
+          <input type="radio" id="i2" name="images" />
+          <input type="radio" id="i3" name="images" />
+          <input type="radio" id="i4" name="images" />
+          <input type="radio" id="i5" name="images" />
+        
+          <div class="slide_img" id="one">
+            <img src="./static/images/blacklight_bild_1.jpg">
+            
+            <label class="prev" for="i5">
+              <span>&#x2039;</span>
+            </label>
+            <label class="next" for="i2">
+              <span>&#x203a;</span>
+            </label>
+            <div class="image-text">blacklight GmbH & Co KG</div>
+        
+          </div>
+        
+          <div class="slide_img" id="two">
+        
+            <img src="./static/images/blacklight_bild_2.jpg">
+        
+            <label class="prev" for="i1">
+              <span>&#x2039;</span>
+            </label>
+            <label class="next" for="i3">
+              <span>&#x203a;</span>
+            </label>
+              <div class="image-text">blacklight GmbH & Co KG</div>
+            
+        
+          </div>
+        
+          <div class="slide_img" id="three">
+            <img src="./static/images/blacklight_bild_3.jpg">
+        
+            <label class="prev" for="i2">
+              <span>&#x2039;</span>
+            </label>
+            <label class="next" for="i4">
+              <span>&#x203a;</span>
+            </label>
+              <div class="image-text">blacklight GmbH & Co KG</div>
+          </div>
+          
+        
+          <div class="slide_img" id="four">
+            <img src="./static/images/blacklight_bild_4.jpg">
+        
+            <label class="prev" for="i3">
+              <span>&#x2039;</span>
+            </label>
+            <label class="next" for="i5">
+              <span>&#x203a;</span>
+            </label>
+              <div class="image-text">blacklight GmbH & Co KG</div>
+          </div>
+        
+          <div class="slide_img" id="five">
+            <img src="./static/images/blacklight_bild_5.jpg">
+        
+            <label class="prev" for="i4">
+              <span>&#x2039;</span>
+            </label>
+            <label class="next" for="i1">
+              <span>&#x203a;</span>
+            </label>
+              <div class="image-text">blacklight GmbH & Co KG</div>
+        
+          </div>
+        
+          <div id="nav_slide">
+            <label for="i1" class="dots" id="dot1"></label>
+            <label for="i2" class="dots" id="dot2"></label>
+            <label for="i3" class="dots" id="dot3"></label>
+            <label for="i4" class="dots" id="dot4"></label>
+            <label for="i5" class="dots" id="dot5"></label>
+          </div>
+        
+        </div>
+
+      
+      
+      </section>
 
 
     <div>
 
-      hallo
-      asasd
-      asasd
+      
+      
+      <div id="content">
+        <main>
+          Haupt inhalt Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, possimus? Soluta neque aliquid eos, veniam
+          culpa repellendus blanditiis quo aperiam cum consequuntur. Ipsam sunt aspernatur molestiae earum perspiciatis, ex distinctio!
+          Possimus, similique iusto. Saepe repudiandae culpa quo aspernatur eveniet, odio magnam recusandae praesentium laudantium
+          dolorem assumenda aliquid nulla dolor rem voluptatum architecto. Unde nulla labore id, repellendus architecto velit esse
+          exercitationem iure ut. Laudantium, quam blanditiis, harum voluptatibus iste facilis ad soluta in deleniti quia mollitia
+          dolorem sapiente. Velit aut rem excepturi similique necessitatibus deserunt repudiandae nihil, nulla praesentium consectetur
+          totam distinctio minus laboriosam neque laborum eveniet harum iste doloremque, fuga veritatis possimus accusamus. Molestias
+          ex autem fugiat nobis incidunt veniam tenetur officiis libero quisquam. Quaerat esse impedit eveniet tempora perferendis
+          omnis excepturi architecto corrupti laborum aperiam aspernatur exercitationem quibusdam a rerum, obcaecati iste sapiente,
+          vel ut. Alias, voluptatum numquam eum corporis inventore iure nesciunt impedit. Voluptatem, ducimus. Id libero beatae architecto
+          animi laboriosam labore deserunt incidunt fugit sunt earum, sequi sapiente commodi porro harum a vero quod esse? Placeat
+          non nobis a temporibus natus. Sapiente necessitatibus fuga, dolor quis facilis asperiores eum cum molestias distinctio
+          voluptas neque aliquid non in consectetur est mollitia ad illo! Nihil a eligendi deleniti hic! Mollitia, debitis quae.
+          Rerum eligendi nam ea consectetur inventore officiis itaque ex! Temporibus velit animi ex optio adipisci iusto minus mollitia
+          suscipit distinctio similique totam quia, rem soluta. Dolor qui, omnis, excepturi error tempore cum dignissimos molestias
+          doloribus totam illo voluptatem nam similique sint dicta inventore facilis recusandae distinctio maxime quas? Eos modi
+          optio voluptatem aliquam quod, laborum esse error assumenda laudantium quae quis doloribus alias, fugiat consequatur, magnam
+          excepturi similique cupiditate recusandae quas incidunt provident molestiae harum. At, error iusto sit eveniet tempora
+          placeat hic vel ipsam saepe, laudantium tenetur voluptatem animi, quasi deleniti quam obcaecati aspernatur molestias?
+        </main>
 
-    </div>
- <section id="wrapper" class="skewed">
-            <div class="layer bottom">
-                <div class="content-wrap">
-                    <div class="content-body">
-                        <h1>Look Sharp</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam temporibus dolore vero reiciendis atque debitis. Sequi at consequatur deserunt?</p>
-                    </div>
-                    <img src="http://www.traversymedia.com/downloads/assets/image1.png" alt="" />
-                </div>
-            </div>
+        <aside>
+          irgendwelche werbung / eigenes material zum werben / refernez projekt anzeigen als eine art news box
+        </aside>
 
-            <div class="layer top">
-                <div class="content-wrap">
-                    <div class="content-body">
-                        <h1>Stay Cool</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam temporibus dolore vero reiciendis atque debitis. Sequi at consequatur deserunt?</p>
-                    </div>
-                    <img src="http://www.traversymedia.com/downloads/assets/image2.png" alt="" />
-                </div>
-            </div>
-
-            <div class="handle"></div>
-        </section>
-
-    <div>
-
-      <nav>
-        <a href="/home">Home</a>
-        <a href="/leistungen">Leistung</a>
-        <a href="/material">Material</a>
-        <a href="/portfolio">Portfolio</a>
-        <a href="/über-uns">Über uns</a>
-      </nav>
-
-      <section>bilder silder max. 5mal</section>
-
-      <main>
-        Haupt inhalt
-
-
-
-      </main>
-
-      <aside>
-        irgendwelche werbung / eigenes material zum werben / refernez projekt anzeigen als eine art news box
-      </aside>
-
+      </div>  
+      
+      
       <footer>
-        rechtliches / kontakt / impressum / agb / Adresse / anfahrt usw.
+        <div>
+          blacklight GmbH & Co KG<br />
+          Büttnerstr. 22a<br />
+          <br />  
+          30165 Hannover<br />
+
+<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJd5YlvlUMsEcRrDq-nVffSJ4"
+  allowfullscreen=""></iframe>
+
+
+  email: <a href="mailto:info@blacklight-hannover.de">info@blacklight-hannover.de</a>
+  <br />
+tel.: <a href="tel:+495111234567">0511 / 1234567</a><br />
+
+          rechtliches / kontakt / impressum / agb / Adresse / anfahrt usw.
+        </div>
       </footer>
 
 
